@@ -33,7 +33,7 @@ public class PrimerControlador {
 		return "hola";
 	}
 	
-	@RequestMapping(value="/inicio", method=RequestMethod.POST)
+	@RequestMapping(value="/pasado", method=RequestMethod.POST)
 	public String metodo3 (Model model, HttpServletRequest req, LocalDate date) {
 		System.out.println("Mi primer controlador de Spring");
 		String valor = req.getParameter("param1");
