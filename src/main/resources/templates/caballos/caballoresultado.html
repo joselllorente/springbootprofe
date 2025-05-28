@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Introducidos</title>
+</head>
+<body>
+    <h1>Datos recibidos</h1>
+    <p>Nombre: <span th:text="${caballoResultado.nombre}"></span></p>
+    <p>Edad: <span th:text="${caballoResultado.edad}"></span></p>
+    <p>Velocidad: <span th:text="${caballoResultado.velocidadMaxima}"></span></p>
+    <p>Triunfos: <span th:text="${caballoResultado.numeroTriunfos}"></span></p>
+    <p>Experiencia: <span th:text="${caballoResultado.experiencia}"></span></p>
+</body>
+</html>
