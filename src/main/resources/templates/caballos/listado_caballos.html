@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+	<h1>Hola</h1>
+
+	<form th:action="@{/filtrar_caballos}" method="post">
+		<label>Nombre:</label> <input type="text" name="nombre_caballo" /><br />
+
+		<button type="submit">Enviar</button>
+	</form>
+
+
+	<table>
+		<tbody>
+			<tr>
+				<th>id</th>
+				<th>Nombre</th>
+				<th>Edad</th>
+			</tr>
+
+			<tr th:each="caballo: ${lista}">
+				<td><span th:text="${caballo.id}"></span></td>
+				<td><span th:text="${caballo.nombre}"></span></td>
+				<td><span th:text="${caballo.edad}"></span></td>
+				</th:each>
+		</tbody>
+
+
+	</table>
+
+</body>

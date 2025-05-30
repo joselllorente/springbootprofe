@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
@@ -13,6 +15,7 @@ import jakarta.persistence.Table;
 public class Caballo {
 
 	@Id
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int id;
 	@Value("Trueno")
 	private String nombre;
@@ -62,6 +65,13 @@ public class Caballo {
 	public void setExperiencia(double experiencia) {
 		this.experiencia = experiencia;
 	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
 	
 	
 }
