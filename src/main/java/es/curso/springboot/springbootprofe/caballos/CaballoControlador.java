@@ -8,11 +8,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import es.curso.springboot.springbootprofe.repositories.CaballoRepository;
+
 @Controller
 public class CaballoControlador {
 
 	@Autowired
 	private Caballo caballo;
+	
+	@Autowired
+	private CaballoRepository caballoRep;
 	
 	//@RequestMapping("/caballourl")
 	@GetMapping("/caballourl")
@@ -28,7 +33,8 @@ public class CaballoControlador {
 	
 	@PostMapping("/procesarcaballo")
 	public String inicio2(Model model, @ModelAttribute Caballo caballo) {
-		
+		caballoRep.save(caballo);
+		//caballoRep.
 		model.addAttribute("caballoResultado",caballo);
 		return "caballos/caballoresultado";
 	}

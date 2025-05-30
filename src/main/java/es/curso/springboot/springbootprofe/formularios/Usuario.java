@@ -1,4 +1,4 @@
-package es.curso.springboot.springbootprofe.form;
+package es.curso.springboot.springbootprofe.formularios;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -6,8 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Usuario {
-	
+	//@Value("Juan")
     private String nombre;
+	//@Value("22")
     private int edad;
     
     public Usuario() {

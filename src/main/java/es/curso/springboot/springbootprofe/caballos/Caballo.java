@@ -3,9 +3,17 @@ package es.curso.springboot.springbootprofe.caballos;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 @Component
+@Entity
+@Table(name="TB_CABALLO")
 public class Caballo {
 
+	@Id
+	private int id;
 	@Value("Trueno")
 	private String nombre;
 	private int edad;
