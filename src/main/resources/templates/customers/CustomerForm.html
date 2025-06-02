@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+</head>
+
+<body>
+	<h2>Spring's form tags example</h2>
+
+	<form th:action="@{/addStudent}" th:object="customer" method="post">
+	   <label>Nombre:</label>
+	        <input type="text" th:field="name" /><br/>
+	    
+	    <label>Apellidos:</label>
+	        <input type="text" th:field="apellidos" /><br/>
+	        
+	    <label>Edad:</label>
+	        <input type="text" th:field="age" /><br/>
+	    
+	    <label>Id:</label>
+	        <input type="text" th:field="id" /><br/>
+	    
+	            <input type="submit" value="Submit"/>
+	  </form>
+
+	<form th:action="@{/addStudent}" th:object="customer" method="post">
+ 		<label>Nombre:</label>
+	    <input type="text" th:field="userName" /><br/>
+	    
+	    <label>Address:</label>
+	    <textarea th:field="*{address}"></textarea></td>
+		
+		<label>Address:</label>
+		<input type="password" th:field="*{password}" /></td>
+		
+		
+		<label>Confirm Password :</label>
+		<td><input type="password" th:field="*{confirmPassword}" /></td>
+
+			
+		<label>Subscribe to newsletter? :</label>
+		<input type="checkbox" th:field="*{receiveNewsletter}" /></td>
+
+
+				<label>Sex :</label>
+				<td><form:radiobutton path="sex" value="M" />Male 
+					<form:radiobutton path="sex" value="F" />Female</td>
+			
+			
+
+
+				<label>Country :</label>
+				<select th:field="*{country}">
+				    <option value="NONE">--- Select ---</option>
+				    <option th:each="pais : ${countryList}"
+				            th:value="${pais}" 
+				            th:text="${pais}">Pais</option>
+				</select>
+					
+
+
+
+
+				<label>Java Skills :</label>
+				<select th:field="*{javaSkills}" multiple="multiple">
+				    <option th:each="skill : ${javaSkillsList}"
+				            th:value="${skill}" 
+				            th:text="${skill}">Skill</option>
+				</select>
+
+
+			<label>Date :</label>
+			<input type="date" th:field="*{date}" />
+				
+
+			<input type="hidden" th:field="*{secretValue}" />
+
+			<button type="submit">Enviar</button>
+	</form>
+
+</body>
+</html>
