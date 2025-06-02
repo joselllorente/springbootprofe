@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import es.curso.springboot.springbootprofe.repositories.CaballoRepository;
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class CaballoControlador {
@@ -24,10 +25,10 @@ public class CaballoControlador {
 	
 	//@RequestMapping("/caballourl")
 	@GetMapping("/caballourl")
-	public ModelAndView inicio(Model model) {
+	public ModelAndView inicio(Model model, HttpSession session) {
 		System.out.println("Entrando en inicio");
 		//model.addAttribute("caballoAtributo", caballo);
-		
+		System.out.println(session.getAttribute("customer").toString());
 		System.out.println("Saliendo de inicio");
 		//return "caballoForm";
 		//return new ModelAndView("caballoForm");

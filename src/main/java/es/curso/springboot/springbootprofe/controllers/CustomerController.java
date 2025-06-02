@@ -41,9 +41,10 @@ public class CustomerController {
 	public String processSubmit(@ModelAttribute("customer") Customer customer,
 			BindingResult result, Model model, SessionStatus status,
 			HttpSession session) {
+		
 		System.out.println(session.getAttribute("customer").toString());
 		registro.registraCustomer(customer);
-		return "CustomerSuccess";
+		return "customers/CustomerSuccess";
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
@@ -66,9 +67,10 @@ public class CustomerController {
 		
 		//command object
 		model.addAttribute("customer", cust);
+
 		
 		//return form view
-		String customerForm = "CustomerForm";
+		String customerForm = "customers/CustomerForm";
 		System.out.println(customerForm);
 		return customerForm;
 	}
@@ -112,20 +114,20 @@ public class CustomerController {
 		return numberList;
 	}
 
-	@ModelAttribute("javaSkillsList")
+	@ModelAttribute("javaSkillsMap")
 	public Map<String, String> populateJavaSkillList() {
 
 		// Data referencing for java skills list box
 		Map<String, String> javaSkill = new LinkedHashMap<String, String>();
 		javaSkill.put("Hibernate", "Hibernate");
-		javaSkill.put("Spring", "Springs");
+		javaSkill.put("Spring", "Spring");
 		javaSkill.put("Apache Wicket", "Apache Wicketss");
 		javaSkill.put("Struts", "Struts");
 
 		return javaSkill;
 	}
 
-	@ModelAttribute("countryList")
+	@ModelAttribute("countryMap")
 	public Map<String, String> populateCountryList() {
 
 		// Data referencing for java skills list box

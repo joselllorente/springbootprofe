@@ -26,6 +26,7 @@ public class Customer{
 	//dropdown box
 	String country;
 	String javaSkills;
+	String numero;
 	
 	//hidden value
 	String secretValue;
@@ -111,6 +112,17 @@ public class Customer{
 		this.date = date;
 	}
 	
+	
+	public String getNumero() {
+		return numero;
+	}
+
+
+	public void setNumero(String numero) {
+		this.numero = numero;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Customer [userName=" + userName + ", address=" + address
