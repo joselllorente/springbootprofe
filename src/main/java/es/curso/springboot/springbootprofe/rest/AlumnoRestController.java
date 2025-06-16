@@ -2,6 +2,7 @@ package es.curso.springboot.springbootprofe.rest;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +19,7 @@ import es.curso.springboot.springbootprofe.beans.Alumno;
 @RequestMapping("/alumnos")
 public class AlumnoRestController {
 	
-	private List<Alumno> lista = new ArrayList<>();
+	private List<Alumno> lista = new CopyOnWriteArrayList<Alumno>();
 	
 	@GetMapping
     public List<Alumno> obtenerAlumnos() {
@@ -27,9 +28,10 @@ public class AlumnoRestController {
     }
 
     @PostMapping
-    public Alumno crearAlumno(@RequestBody Alumno Alumno) {
-        lista.add(Alumno);
-        return Alumno;
+    public Alumno crearAlumno(@RequestBody Alumno alumno) {
+    	System.out.println("Creando alumno: "+ alumno);
+        lista.add(alumno);
+        return alumno;
     }
 
     @GetMapping("/{id}")
@@ -56,11 +58,11 @@ public class AlumnoRestController {
 
     @DeleteMapping("/{id}")
     public void eliminarAlumno(@PathVariable int id) {
-    	for (Alumno a : lista) {
-			if (a.getId()==id) {
-				lista.remove(a);
-			}
-		}
-        //lista.removeIf(u -> u.getId() == id);
+//    	for (Alumno a : lista) {
+//			if (a.getId()==id) {
+//				lista.remove(a);
+//			}
+//		}
+        lista.removeIf(u -> u.getId() == id);
     }
 }

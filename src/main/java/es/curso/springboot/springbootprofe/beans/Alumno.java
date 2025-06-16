@@ -8,10 +8,12 @@ public class Alumno {
     private String email;
     private List<String> asignaturas;
     private double notaMedia;
+    
 	public Alumno() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Alumno(int id, String nombre, String email, List<String> asignaturas, double notaMedia) {
 		super();
 		this.id = id;
@@ -20,6 +22,7 @@ public class Alumno {
 		this.asignaturas = asignaturas;
 		this.notaMedia = notaMedia;
 	}
+	
 	public int getId() {
 		return id;
 	}
@@ -50,6 +53,24 @@ public class Alumno {
 	public void setNotaMedia(double notaMedia) {
 		this.notaMedia = notaMedia;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Alumno [id=");
+		builder.append(id);
+		builder.append(", nombre=");
+		builder.append(nombre);
+		builder.append(", email=");
+		builder.append(email);
+		builder.append(", asignaturas=");
+		builder.append(asignaturas);
+		builder.append(", notaMedia=");
+		builder.append(notaMedia);
+		builder.append("]");
+		return builder.toString();
+	}
     
+	
 	
 }

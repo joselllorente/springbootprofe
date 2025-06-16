@@ -4,6 +4,10 @@ public class Suma implements Operacion {
 
 	private int numero;
 		
+	public Suma () {
+		
+	}
+	
 	public Suma(int numero) {
 		super();
 		this.numero = numero;
